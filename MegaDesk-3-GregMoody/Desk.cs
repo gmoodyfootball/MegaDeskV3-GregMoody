@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MegaDesk_3_GregMoody
 {
-    class Desk
+    public class Desk
     {
         public int width { get; set; }
         public int depth { get; set; }
@@ -14,16 +14,16 @@ namespace MegaDesk_3_GregMoody
         public string surfaceMaterial { get; set; }
 
         //Default constructor
-        Desk()
+        public Desk()
         {
             width = 0;
             depth = 0;
             numDrawers = 0;
-            surfaceMaterial = "Nothing";
+            surfaceMaterial = "Pine";
         }
 
         //Parameter'd input
-        Desk(int width, int depth, int numDrawers, string surfaceMaterial)
+        public Desk(int width, int depth, int numDrawers, string surfaceMaterial)
         {
             this.width = width;
             this.depth = depth;
