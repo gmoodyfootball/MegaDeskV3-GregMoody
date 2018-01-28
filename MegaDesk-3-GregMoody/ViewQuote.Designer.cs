@@ -49,6 +49,9 @@
             this.CancelButton = this.cancelViewQuote;
             this.ClientSize = new System.Drawing.Size(334, 262);
             this.Controls.Add(this.cancelViewQuote);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(350, 300);
+            this.MinimumSize = new System.Drawing.Size(350, 300);
             this.Name = "ViewQuote";
             this.Text = "View Quotes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ViewQuote_FormClosed);

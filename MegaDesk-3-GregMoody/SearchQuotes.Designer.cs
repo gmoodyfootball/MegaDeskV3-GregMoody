@@ -49,6 +49,9 @@
             this.CancelButton = this.cancelSearchQuotes;
             this.ClientSize = new System.Drawing.Size(334, 262);
             this.Controls.Add(this.cancelSearchQuotes);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(350, 300);
+            this.MinimumSize = new System.Drawing.Size(350, 300);
             this.Name = "SearchQuotes";
             this.Text = "Search Quotes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SearchQuotes_FormClosed);

@@ -39,6 +39,7 @@
             // 
             // exitApp
             // 
+            this.exitApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.exitApp.Location = new System.Drawing.Point(12, 201);
             this.exitApp.Name = "exitApp";
             this.exitApp.Size = new System.Drawing.Size(137, 47);
@@ -49,6 +50,7 @@
             // 
             // searchQuoteButton
             // 
+            this.searchQuoteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.searchQuoteButton.Location = new System.Drawing.Point(12, 136);
             this.searchQuoteButton.Name = "searchQuoteButton";
             this.searchQuoteButton.Size = new System.Drawing.Size(137, 47);
@@ -59,6 +61,7 @@
             // 
             // addNewQuote
             // 
+            this.addNewQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.addNewQuote.Location = new System.Drawing.Point(12, 12);
             this.addNewQuote.Name = "addNewQuote";
             this.addNewQuote.Size = new System.Drawing.Size(137, 47);
@@ -69,6 +72,7 @@
             // 
             // viewQuotes
             // 
+            this.viewQuotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.viewQuotes.Location = new System.Drawing.Point(12, 74);
             this.viewQuotes.Name = "viewQuotes";
             this.viewQuotes.Size = new System.Drawing.Size(137, 47);
@@ -99,6 +103,9 @@
             this.Controls.Add(this.viewQuotes);
             this.Controls.Add(this.searchQuoteButton);
             this.Controls.Add(this.exitApp);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(350, 300);
+            this.MinimumSize = new System.Drawing.Size(350, 300);
             this.Name = "MainMenu";
             this.Text = "MegaDesk-Greg Moody";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

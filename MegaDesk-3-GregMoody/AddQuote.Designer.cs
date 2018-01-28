@@ -54,7 +54,7 @@
             this.cancelAddQuote.Location = new System.Drawing.Point(47, 216);
             this.cancelAddQuote.Name = "cancelAddQuote";
             this.cancelAddQuote.Size = new System.Drawing.Size(120, 43);
-            this.cancelAddQuote.TabIndex = 0;
+            this.cancelAddQuote.TabIndex = 7;
             this.cancelAddQuote.Text = "Cancel";
             this.cancelAddQuote.UseVisualStyleBackColor = true;
             this.cancelAddQuote.Click += new System.EventHandler(this.cancelAddQuote_Click);
@@ -75,7 +75,7 @@
             0});
             this.widthUpDown.Name = "widthUpDown";
             this.widthUpDown.Size = new System.Drawing.Size(120, 26);
-            this.widthUpDown.TabIndex = 0;
+            this.widthUpDown.TabIndex = 1;
             this.widthUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.widthUpDown.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             this.widthUpDown.Value = new decimal(new int[] {
@@ -122,7 +122,7 @@
             0});
             this.depthUpDown.Name = "depthUpDown";
             this.depthUpDown.Size = new System.Drawing.Size(120, 26);
-            this.depthUpDown.TabIndex = 1;
+            this.depthUpDown.TabIndex = 2;
             this.depthUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.depthUpDown.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             this.depthUpDown.Value = new decimal(new int[] {
@@ -153,7 +153,7 @@
             0});
             this.numDrawersUpDown.Name = "numDrawersUpDown";
             this.numDrawersUpDown.Size = new System.Drawing.Size(120, 26);
-            this.numDrawersUpDown.TabIndex = 2;
+            this.numDrawersUpDown.TabIndex = 3;
             this.numDrawersUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numDrawersUpDown.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             // 
@@ -176,7 +176,7 @@
             this.surfaceMaterialComboBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.surfaceMaterialComboBox.Size = new System.Drawing.Size(120, 26);
             this.surfaceMaterialComboBox.Sorted = true;
-            this.surfaceMaterialComboBox.TabIndex = 3;
+            this.surfaceMaterialComboBox.TabIndex = 4;
             this.surfaceMaterialComboBox.Text = "Pine";
             // 
             // addQuoteSurfaceLabel
@@ -218,7 +218,7 @@
             this.rushDaysComboBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rushDaysComboBox.Size = new System.Drawing.Size(120, 26);
             this.rushDaysComboBox.Sorted = true;
-            this.rushDaysComboBox.TabIndex = 4;
+            this.rushDaysComboBox.TabIndex = 5;
             this.rushDaysComboBox.Text = "3";
             this.rushDaysComboBox.ValueMember = "3";
             // 
@@ -229,7 +229,7 @@
             this.getQuoteButton.Location = new System.Drawing.Point(179, 216);
             this.getQuoteButton.Name = "getQuoteButton";
             this.getQuoteButton.Size = new System.Drawing.Size(120, 43);
-            this.getQuoteButton.TabIndex = 9;
+            this.getQuoteButton.TabIndex = 6;
             this.getQuoteButton.Text = "Get Quote!";
             this.getQuoteButton.UseVisualStyleBackColor = true;
             this.getQuoteButton.Click += new System.EventHandler(this.getQuoteButton_Click);
@@ -277,6 +277,8 @@
             this.Controls.Add(this.widthUpDown);
             this.Controls.Add(this.cancelAddQuote);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(350, 300);
+            this.MinimumSize = new System.Drawing.Size(350, 300);
             this.Name = "AddQuote";
             this.Text = "Add New Quote";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddQuote_FormClosed);
