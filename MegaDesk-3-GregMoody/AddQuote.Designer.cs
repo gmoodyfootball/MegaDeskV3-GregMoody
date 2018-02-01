@@ -164,12 +164,6 @@
             this.surfaceMaterialComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.surfaceMaterialComboBox.FormattingEnabled = true;
             this.surfaceMaterialComboBox.IntegralHeight = false;
-            this.surfaceMaterialComboBox.Items.AddRange(new object[] {
-            "Laminate",
-            "Oak",
-            "Pine",
-            "Rosewood",
-            "Veneer"});
             this.surfaceMaterialComboBox.Location = new System.Drawing.Point(180, 153);
             this.surfaceMaterialComboBox.MaxDropDownItems = 5;
             this.surfaceMaterialComboBox.Name = "surfaceMaterialComboBox";
@@ -177,7 +171,6 @@
             this.surfaceMaterialComboBox.Size = new System.Drawing.Size(120, 26);
             this.surfaceMaterialComboBox.Sorted = true;
             this.surfaceMaterialComboBox.TabIndex = 4;
-            this.surfaceMaterialComboBox.Text = "Pine";
             // 
             // addQuoteSurfaceLabel
             // 
@@ -209,6 +202,7 @@
             this.rushDaysComboBox.FormattingEnabled = true;
             this.rushDaysComboBox.IntegralHeight = false;
             this.rushDaysComboBox.Items.AddRange(new object[] {
+            "14",
             "3",
             "5",
             "7"});

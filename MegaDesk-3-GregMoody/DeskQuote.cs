@@ -50,19 +50,19 @@ namespace MegaDesk_2_GregMoody
             //Find out how much the surface material costs
             switch (desk.surfaceMaterial)
             {
-                case "Oak" :
+                case Desk.Surface.Oak:
                     surfaceMaterialCost = 200;
                     break;
-                case "Laminate":
+                case Desk.Surface.Laminate:
                     surfaceMaterialCost = 100;
                     break;
-                case "Pine":
+                case Desk.Surface.Pine:
                     surfaceMaterialCost = 50;
                     break;
-                case "Rosewood":
+                case Desk.Surface.Rosewood:
                     surfaceMaterialCost = 300;
                     break;
-                case "Veneer":
+                case Desk.Surface.Veneer:
                     surfaceMaterialCost = 125;
                     break;
                 default:
