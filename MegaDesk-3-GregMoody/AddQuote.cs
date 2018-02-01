@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MegaDesk_3_GregMoody
+namespace MegaDesk_2_GregMoody
 {
     public partial class AddQuote : Form
     {
@@ -41,7 +41,7 @@ namespace MegaDesk_3_GregMoody
             int numDrawers = (int)numDrawersUpDown.Value;
             string surfaceMaterial;
             int rushDays;
-            DateTime quoteDate = new DateTime(); //This needs to be fixed
+            DateTime quoteDate = DateTime.Today;
             try
             {
               surfaceMaterial = surfaceMaterialComboBox.SelectedItem.ToString(); //Get the value of the surfaceMaterial string

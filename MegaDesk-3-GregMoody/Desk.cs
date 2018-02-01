@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaDesk_3_GregMoody
+namespace MegaDesk_2_GregMoody
 {
     public class Desk
     {
@@ -12,6 +12,15 @@ namespace MegaDesk_3_GregMoody
         public int depth { get; set; }
         public int numDrawers { get; set; }
         public string surfaceMaterial { get; set; }
+
+        public enum Surface
+        {
+            Pine, //0
+            Laminate, //1
+            Oak, //2
+            Veneer, //3
+            Rosewood //4
+        }
 
         //Default constructor
         public Desk()

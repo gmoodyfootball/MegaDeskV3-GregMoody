@@ -1,4 +1,4 @@
-﻿namespace MegaDesk_3_GregMoody
+﻿namespace MegaDesk_2_GregMoody
 {
     partial class ViewQuote
     {

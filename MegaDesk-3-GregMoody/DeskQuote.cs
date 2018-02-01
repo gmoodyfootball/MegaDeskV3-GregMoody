@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaDesk_3_GregMoody
+namespace MegaDesk_2_GregMoody
 {
     public class DeskQuote
     {
@@ -30,7 +30,7 @@ namespace MegaDesk_3_GregMoody
             desk = new Desk();
             rushDays = 0;
             custName = "NoNameJenkins";
-            quoteDate = new DateTime();
+            quoteDate = DateTime.Today;
             totalCost = 0;
         }
 
