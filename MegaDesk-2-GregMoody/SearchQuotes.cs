@@ -28,7 +28,6 @@ namespace MegaDesk_2_GregMoody
         {
             var mainMenu = (MainMenu)Tag;
             mainMenu.Show();
-
         }
     }
 }

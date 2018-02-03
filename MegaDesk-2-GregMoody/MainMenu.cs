@@ -19,9 +19,9 @@ namespace MegaDesk_2_GregMoody
 
         private void addNewQuote_Click(object sender, EventArgs e)
         {
-            AddQuote addNewQuoteForm = new AddQuote();
-            addNewQuoteForm.Tag = this;
-            addNewQuoteForm.Show(this);
+            AddQuote addNewQuoteForm = new AddQuote(this);
+        //    addNewQuoteForm.Tag = this;
+            addNewQuoteForm.Show();
             Hide();
         }
 
@@ -32,9 +32,9 @@ namespace MegaDesk_2_GregMoody
 
         private void viewQuotes_Click(object sender, EventArgs e)
         {
-            ViewQuote addQuoteViewForm = new ViewQuote();
-            addQuoteViewForm.Tag = this;
-            addQuoteViewForm.Show(this);
+            ViewQuote quotesViewForm = new ViewQuote(this);
+            //addQuoteViewForm.Tag = this;
+            quotesViewForm.Show();
             Hide();
         }
 
