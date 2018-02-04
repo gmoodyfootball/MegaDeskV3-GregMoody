@@ -46,11 +46,13 @@
             // cancelSearchQuotes
             // 
             this.cancelSearchQuotes.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelSearchQuotes.Location = new System.Drawing.Point(396, 300);
+            this.cancelSearchQuotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cancelSearchQuotes.Location = new System.Drawing.Point(529, 239);
             this.cancelSearchQuotes.Name = "cancelSearchQuotes";
-            this.cancelSearchQuotes.Size = new System.Drawing.Size(75, 23);
+            this.cancelSearchQuotes.Size = new System.Drawing.Size(100, 26);
             this.cancelSearchQuotes.TabIndex = 0;
-            this.cancelSearchQuotes.Text = "Cancel";
+            this.cancelSearchQuotes.Tag = "";
+            this.cancelSearchQuotes.Text = "Main Menu";
             this.cancelSearchQuotes.UseVisualStyleBackColor = true;
             this.cancelSearchQuotes.Click += new System.EventHandler(this.cancelSearchQuotes_Click);
             // 
@@ -119,19 +121,20 @@
             this.surfaceMaterialComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.surfaceMaterialComboBox.FormattingEnabled = true;
             this.surfaceMaterialComboBox.IntegralHeight = false;
-            this.surfaceMaterialComboBox.Location = new System.Drawing.Point(228, 245);
+            this.surfaceMaterialComboBox.Location = new System.Drawing.Point(270, 239);
             this.surfaceMaterialComboBox.MaxDropDownItems = 5;
             this.surfaceMaterialComboBox.Name = "surfaceMaterialComboBox";
             this.surfaceMaterialComboBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.surfaceMaterialComboBox.Size = new System.Drawing.Size(120, 26);
+            this.surfaceMaterialComboBox.Size = new System.Drawing.Size(147, 26);
             this.surfaceMaterialComboBox.Sorted = true;
             this.surfaceMaterialComboBox.TabIndex = 5;
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(413, 247);
+            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.searchButton.Location = new System.Drawing.Point(423, 239);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.Size = new System.Drawing.Size(100, 26);
             this.searchButton.TabIndex = 6;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
@@ -142,7 +145,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelSearchQuotes;
-            this.ClientSize = new System.Drawing.Size(869, 335);
+            this.ClientSize = new System.Drawing.Size(869, 288);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.surfaceMaterialComboBox);
             this.Controls.Add(this.searchQuotesDataGridView);
