@@ -104,6 +104,7 @@
     <EmbeddedResource Include="ViewQuote.resx">
       <DependentUpon>ViewQuote.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\ViewQuote.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

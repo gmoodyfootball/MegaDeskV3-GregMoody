@@ -50,7 +50,7 @@ namespace MegaDesk_2_GregMoody
             int numDrawers = (int)numDrawersUpDown.Value;
             Desk.Surface surfaceMaterial;
             int rushDays;
-            DateTime quoteDate = DateTime.Today;
+            DateTime quoteDate = DateTime.Now;
             try
             {
               surfaceMaterial = (Desk.Surface)(surfaceMaterialComboBox.SelectedItem); //Get the value of the surfaceMaterial string

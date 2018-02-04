@@ -12,7 +12,7 @@ namespace MegaDesk_2_GregMoody
         public int rushDays { get; set; }
         public string custName { get; set; }
         public DateTime quoteDate { get; set; }
-        public float totalCost { get; set; }
+        public int totalCost { get; set; }
         
         //Non-Default Constructor
         public DeskQuote(Desk desk, int rushDays, string custName, DateTime quoteDate)
@@ -21,7 +21,7 @@ namespace MegaDesk_2_GregMoody
             this.rushDays = rushDays;
             this.custName = custName;
             this.quoteDate = quoteDate;
-            totalCost = 0;
+            totalCost = (getQuote());
         }
 
         //Default Constructor
@@ -30,7 +30,7 @@ namespace MegaDesk_2_GregMoody
             desk = new Desk();
             rushDays = 0;
             custName = "NoNameJenkins";
-            quoteDate = DateTime.Today;
+            quoteDate = DateTime.Now;
             totalCost = 0;
         }
 
@@ -125,7 +125,7 @@ namespace MegaDesk_2_GregMoody
 
             //UPDATE THIS WITH ADDITIONAL COST VARIABLES IF NEEDED
             totalCost = basePrice + surfaceMaterialCost + extraAreaCost + rushDaysCost + numDrawersCost;
-
+            this.totalCost = totalCost;
             return totalCost;
         }
     }
