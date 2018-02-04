@@ -123,7 +123,7 @@ namespace MegaDesk_2_GregMoody
             //Number of Drawers
             int numDrawersCost = desk.numDrawers * 50; //$50 per drawer.
 
-            //UPDATE THIS WITH ADDITIONAL COST VARIABLES
+            //UPDATE THIS WITH ADDITIONAL COST VARIABLES IF NEEDED
             totalCost = basePrice + surfaceMaterialCost + extraAreaCost + rushDaysCost + numDrawersCost;
 
             return totalCost;

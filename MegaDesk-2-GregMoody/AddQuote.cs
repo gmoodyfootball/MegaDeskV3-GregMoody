@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace MegaDesk_2_GregMoody
@@ -71,11 +72,57 @@ namespace MegaDesk_2_GregMoody
             Desk newDesk = new Desk(width, depth, numDrawers, surfaceMaterial);
             DeskQuote newDeskQuote = new DeskQuote(newDesk, rushDays, name, quoteDate);
 
+            //Write the quote to a file
+            writeQuoteToFile(newDeskQuote);
+
             //Launch the displayQuote form
             var displayQuoteForm = new DisplayQuote(_mainMenu, newDeskQuote); //= (ViewQuote)Tag;            
             displayQuoteForm.Show();
             Close(); //close the addQuote form. The displayQuote form will take it from here. It's cool.
             _mainMenu.Hide(); //Because the close() usually shows the main menu, and I don't want it to in this case.
         }
+
+
+        /* This is to write the values to hard drive.*/
+        private void writeQuoteToFile(DeskQuote newDeskQuote)
+        {
+            DeskQuote deskQuote = newDeskQuote;
+            //If the file doesn't exist
+            if (!File.Exists("quotes.txt"))
+            {
+                using (StreamWriter sw = File.AppendText("quotes.txt"))
+                {
+                    var newLine = String.Format("{0},{1},{2},{3},{4},{5},{6},{7}",
+                        deskQuote.custName,
+                        deskQuote.quoteDate,
+                        deskQuote.desk.surfaceMaterial.ToString(),
+                        deskQuote.desk.width,
+                        deskQuote.desk.depth,
+                        deskQuote.desk.numDrawers,
+                        deskQuote.rushDays,
+                        deskQuote.totalCost
+                        );
+                    sw.WriteLine(newLine);
+                }
+            } else //If the file already exists
+            {
+                using (StreamWriter sw = File.AppendText("quotes.txt"))
+                {
+                    var newLine = String.Format("{0},{1},{2},{3},{4},{5},{6},{7}",
+                        deskQuote.custName,
+                        deskQuote.quoteDate,
+                        deskQuote.desk.surfaceMaterial.ToString(),
+                        deskQuote.desk.width,
+                        deskQuote.desk.depth,
+                        deskQuote.desk.numDrawers,
+                        deskQuote.rushDays,
+                        deskQuote.totalCost
+                        );
+                    sw.WriteLine(newLine);
+                }
+            }
+            
+        }
+
     }
 }
