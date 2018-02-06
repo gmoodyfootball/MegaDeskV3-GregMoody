@@ -69,8 +69,16 @@ namespace MegaDeskV3_GregMoody
                 rushDays = 3; //set a default value
             }
 
-            Desk newDesk = new Desk(width, depth, numDrawers, surfaceMaterial);
-            DeskQuote newDeskQuote = new DeskQuote(newDesk, rushDays, name, quoteDate);
+            //Create a desk struct and initialize it
+            Desk desk = new Desk
+            {
+                Width = width,
+                Depth = depth,
+                NumDrawers = numDrawers,
+                SurfaceMaterial = surfaceMaterial
+            };
+            
+            DeskQuote newDeskQuote = new DeskQuote(desk, rushDays, name, quoteDate);
 
             //Write the quote to a file
             writeQuoteToFile(newDeskQuote);
@@ -95,10 +103,10 @@ namespace MegaDeskV3_GregMoody
                     var newLine = String.Format("{0},{1},{2},{3},{4},{5},{6},{7}",
                         deskQuote.custName,
                         deskQuote.quoteDate,
-                        deskQuote.desk.surfaceMaterial.ToString(),
-                        deskQuote.desk.width,
-                        deskQuote.desk.depth,
-                        deskQuote.desk.numDrawers,
+                        deskQuote.desk.SurfaceMaterial.ToString(),
+                        deskQuote.desk.Width,
+                        deskQuote.desk.Depth,
+                        deskQuote.desk.NumDrawers,
                         deskQuote.rushDays,
                         deskQuote.totalCost
                         );
@@ -111,10 +119,10 @@ namespace MegaDeskV3_GregMoody
                     var newLine = String.Format("{0},{1},{2},{3},{4},{5},{6},{7}",
                         deskQuote.custName,
                         deskQuote.quoteDate,
-                        deskQuote.desk.surfaceMaterial.ToString(),
-                        deskQuote.desk.width,
-                        deskQuote.desk.depth,
-                        deskQuote.desk.numDrawers,
+                        deskQuote.desk.SurfaceMaterial.ToString(),
+                        deskQuote.desk.Width,
+                        deskQuote.desk.Depth,
+                        deskQuote.desk.NumDrawers,
                         deskQuote.rushDays,
                         deskQuote.totalCost
                         );

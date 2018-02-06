@@ -38,7 +38,7 @@ namespace MegaDeskV3_GregMoody
         {
             int totalCost = 0;
             int basePrice = 200;
-            int area = desk.width * desk.depth;
+            int area = desk.Width * desk.Depth;
 
             int extraAreaCost = 0;
             //If area over 1000, do something about it!
@@ -98,7 +98,7 @@ namespace MegaDeskV3_GregMoody
 
             //Find out how much the surface material costs
             int surfaceMaterialCost;
-            switch (desk.surfaceMaterial)
+            switch (desk.SurfaceMaterial)
             {
                 case Desk.Surface.Oak:
                     surfaceMaterialCost = 200;
@@ -121,7 +121,7 @@ namespace MegaDeskV3_GregMoody
             }
 
             //Number of Drawers
-            int numDrawersCost = desk.numDrawers * 50; //$50 per drawer.
+            int numDrawersCost = desk.NumDrawers * 50; //$50 per drawer.
 
             //UPDATE THIS WITH ADDITIONAL COST VARIABLES IF NEEDED
             totalCost = basePrice + surfaceMaterialCost + extraAreaCost + rushDaysCost + numDrawersCost;

@@ -26,11 +26,11 @@ namespace MegaDeskV3_GregMoody
             //Going to use these values to populate the form values
             deskQuote = newDeskQuote;
             DQcustomerNameTextBox.Text = deskQuote.custName;
-            DQdepthUpDown.Value = deskQuote.desk.depth;
-            DQwidthUpDown.Value = deskQuote.desk.width;
-            DQnumDrawersUpDown.Value = deskQuote.desk.numDrawers;
+            DQdepthUpDown.Value = deskQuote.desk.Depth;
+            DQwidthUpDown.Value = deskQuote.desk.Width;
+            DQnumDrawersUpDown.Value = deskQuote.desk.NumDrawers;
             DQrushDaysComboBox.Text = deskQuote.rushDays.ToString(); //convert that bad boy to a string!
-            DQsurfaceMaterialComboBox.Text = deskQuote.desk.surfaceMaterial.ToString();
+            DQsurfaceMaterialComboBox.Text = deskQuote.desk.SurfaceMaterial.ToString();
             int totalCost = newDeskQuote.getQuote();
             string formattedQuote = String.Format("${0}.00", totalCost.ToString());
             DQtotalCostLabel.Text = formattedQuote;
