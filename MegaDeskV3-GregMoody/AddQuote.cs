@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace MegaDeskV3_GregMoody
 {
@@ -95,42 +96,71 @@ namespace MegaDeskV3_GregMoody
         private void writeQuoteToFile(DeskQuote newDeskQuote)
         {
             DeskQuote deskQuote = newDeskQuote;
-            //If the file doesn't exist
-            if (!File.Exists("quotes.txt"))
+
+            List <DeskQuote> listODesks = new List<DeskQuote>();
+
+            try
             {
-                using (StreamWriter sw = File.AppendText("quotes.txt"))
+                using (StreamReader sr = new StreamReader("quotes.json"))
                 {
-                    var newLine = String.Format("{0},{1},{2},{3},{4},{5},{6},{7}",
-                        deskQuote.custName,
-                        deskQuote.quoteDate,
-                        deskQuote.desk.SurfaceMaterial.ToString(),
-                        deskQuote.desk.Width,
-                        deskQuote.desk.Depth,
-                        deskQuote.desk.NumDrawers,
-                        deskQuote.rushDays,
-                        deskQuote.totalCost
-                        );
-                    sw.WriteLine(newLine);
-                }
-            } else //If the file already exists
-            {
-                using (StreamWriter sw = File.AppendText("quotes.txt"))
-                {
-                    var newLine = String.Format("{0},{1},{2},{3},{4},{5},{6},{7}",
-                        deskQuote.custName,
-                        deskQuote.quoteDate,
-                        deskQuote.desk.SurfaceMaterial.ToString(),
-                        deskQuote.desk.Width,
-                        deskQuote.desk.Depth,
-                        deskQuote.desk.NumDrawers,
-                        deskQuote.rushDays,
-                        deskQuote.totalCost
-                        );
-                    sw.WriteLine(newLine);
+                    String jsonString = sr.ReadToEnd();
+                    listODesks = JsonConvert.DeserializeObject<List<DeskQuote>>(jsonString);
                 }
             }
-            
-        }
+            catch
+            {
+                //You don messed up
+                //This means there was no file to begin with
+            }
 
-    }
+            listODesks.Add(deskQuote);
+            //Convert the updated list to a json string
+            string json = JsonConvert.SerializeObject(listODesks);
+
+            //This bad boy does everything
+            //aka this will take the updated string and store it in the json file
+            File.WriteAllText("quotes.json", json);
+
+
+                //The old way
+                /*
+                //If the file doesn't exist
+                if (!File.Exists("quotes.txt"))
+                {
+                    using (StreamWriter sw = File.AppendText("quotes.txt"))
+                    {
+                        var newLine = String.Format("{0},{1},{2},{3},{4},{5},{6},{7}",
+                            deskQuote.custName,
+                            deskQuote.quoteDate,
+                            deskQuote.desk.SurfaceMaterial.ToString(),
+                            deskQuote.desk.Width,
+                            deskQuote.desk.Depth,
+                            deskQuote.desk.NumDrawers,
+                            deskQuote.rushDays,
+                            deskQuote.totalCost
+                            );
+                        sw.WriteLine(newLine);
+                    }
+                } else //If the file already exists
+                {
+                    using (StreamWriter sw = File.AppendText("quotes.txt"))
+                    {
+                        var newLine = String.Format("{0},{1},{2},{3},{4},{5},{6},{7}",
+                            deskQuote.custName,
+                            deskQuote.quoteDate,
+                            deskQuote.desk.SurfaceMaterial.ToString(),
+                            deskQuote.desk.Width,
+                            deskQuote.desk.Depth,
+                            deskQuote.desk.NumDrawers,
+                            deskQuote.rushDays,
+                            deskQuote.totalCost
+                            );
+                        sw.WriteLine(newLine);
+                    }
+                }
+                */
+
+            }
+
+        }
 }

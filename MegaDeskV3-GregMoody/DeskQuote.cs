@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,9 @@ namespace MegaDeskV3_GregMoody
         public string custName { get; set; }
         public DateTime quoteDate { get; set; }
         public int totalCost { get; set; }
-        
+        public int[,] rushOrderOptions = new int[3, 3];// { get; set; }
+        public string[] quotes;// { get; set; }
+
         //Non-Default Constructor
         public DeskQuote(Desk desk, int rushDays, string custName, DateTime quoteDate)
         {
@@ -50,12 +53,13 @@ namespace MegaDeskV3_GregMoody
             }
 
             //Find out extra pricing for rush options
+            ReadRushOrderPrices();
             int rushDaysCost = 0;
             if (rushDays == 3)
             {
                 if (area < 1000)
                 {
-                    rushDaysCost = 60;
+                    rushDaysCost = 60; //rushDays[1][1].value;
                 } else if (area >= 1000 && area <= 2000)
                 {
                     rushDaysCost = 70;
@@ -81,7 +85,7 @@ namespace MegaDeskV3_GregMoody
             {
                 if (area < 1000)
                 {
-                    rushDaysCost = 30;
+                    rushDaysCost = 30; //array[1][2][2].value
                 }
                 else if (area >= 1000 && area <= 2000)
                 {
@@ -127,6 +131,39 @@ namespace MegaDeskV3_GregMoody
             totalCost = basePrice + surfaceMaterialCost + extraAreaCost + rushDaysCost + numDrawersCost;
             this.totalCost = totalCost;
             return totalCost;
+        }
+
+        public void ReadRushOrderPrices()
+        {
+
+            //Read the quotes into a 1-dimentional array
+            try
+            {
+                using (StreamReader sr = new StreamReader("rushOrderPrices.txt"))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        quotes = sr.ReadToEnd().Split('\n');
+                    }
+                }
+            }
+            catch
+            {
+                //You don messed up
+            }
+
+            //format dem quotes
+            rushOrderOptions = new int[3,3];
+            int quoteIndex = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                for(int j = 0; j < 3; j++)
+                {
+                    rushOrderOptions[i,j] = int.Parse(quotes[quoteIndex]);
+                    quoteIndex++;
+                }
+            }
+
         }
     }
 }
