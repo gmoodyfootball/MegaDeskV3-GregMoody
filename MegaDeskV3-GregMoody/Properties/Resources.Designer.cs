@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MegaDesk_2_GregMoody.Properties {
+namespace MegaDeskV3_GregMoody.Properties {
     using System;
     
     

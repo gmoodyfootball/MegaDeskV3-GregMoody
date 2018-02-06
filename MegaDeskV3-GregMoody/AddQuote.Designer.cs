@@ -1,4 +1,4 @@
-﻿namespace MegaDesk_2_GregMoody
+﻿namespace MegaDeskV3_GregMoody
 {
     partial class AddQuote
     {

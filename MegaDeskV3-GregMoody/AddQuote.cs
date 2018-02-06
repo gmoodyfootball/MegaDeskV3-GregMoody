@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 
-namespace MegaDesk_2_GregMoody
+namespace MegaDeskV3_GregMoody
 {
     public partial class AddQuote : Form
     {

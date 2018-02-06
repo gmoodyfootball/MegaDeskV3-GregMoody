@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaDesk_2_GregMoody
+namespace MegaDeskV3_GregMoody
 {
     public class Desk
     {

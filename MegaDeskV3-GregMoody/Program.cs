@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MegaDesk_2_GregMoody
+namespace MegaDeskV3_GregMoody
 {
     static class Program
     {
