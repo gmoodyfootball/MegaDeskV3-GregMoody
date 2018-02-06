@@ -8,7 +8,6 @@ namespace MegaDeskV3_GregMoody
 {
     public class DeskQuote
     {
-        //This is a chang
         public Desk desk { get; set; }
         public int rushDays { get; set; }
         public string custName { get; set; }
