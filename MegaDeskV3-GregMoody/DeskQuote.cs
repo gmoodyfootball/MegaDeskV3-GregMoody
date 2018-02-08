@@ -59,7 +59,7 @@ namespace MegaDeskV3_GregMoody
             {
                 if (area < 1000)
                 {
-                    rushDaysCost = 60; //rushDays[1][1].value;
+                    rushDaysCost = 60; //rushOrderOptions[1][1].value;
                 } else if (area >= 1000 && area <= 2000)
                 {
                     rushDaysCost = 70;
