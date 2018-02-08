@@ -52,48 +52,48 @@ namespace MegaDeskV3_GregMoody
                 //I know this is redundant, but it's show why it's times 1
             }
 
-            //Find out extra pricing for rush options
+            //Find out extra pricing for rush options based on .txt file input
             ReadRushOrderPrices();
             int rushDaysCost = 0;
             if (rushDays == 3)
             {
                 if (area < 1000)
                 {
-                    rushDaysCost = 60; //rushOrderOptions[1][1].value;
+                    rushDaysCost = rushOrderOptions[0, 0];
                 } else if (area >= 1000 && area <= 2000)
                 {
-                    rushDaysCost = 70;
+                    rushDaysCost = rushOrderOptions[0, 1];
                 } else //The area is > 2000
                 {
-                    rushDaysCost = 80;
+                    rushDaysCost = rushOrderOptions[0, 2];
                 }
             } else if (rushDays == 5)
             {
                 if (area < 1000)
                 {
-                    rushDaysCost = 40;
+                    rushDaysCost = rushOrderOptions[1, 0];
                 }
                 else if (area >= 1000 && area <= 2000)
                 {
-                    rushDaysCost = 50;
+                    rushDaysCost = rushOrderOptions[1, 1];
                 }
                 else //The area is > 2000
                 {
-                    rushDaysCost = 60;
+                    rushDaysCost = rushOrderOptions[1, 2];
                 }
             } else if (rushDays == 7)
             {
                 if (area < 1000)
                 {
-                    rushDaysCost = 30; //array[1][2][2].value
+                    rushDaysCost = rushOrderOptions[2, 0]; //array[1][2][2].value
                 }
                 else if (area >= 1000 && area <= 2000)
                 {
-                    rushDaysCost = 35;
+                    rushDaysCost = rushOrderOptions[2, 1];
                 }
                 else //The area is > 2000
                 {
-                    rushDaysCost = 40;
+                    rushDaysCost = rushOrderOptions[2, 2];
                 }
             } else //standard shipping
             {
