@@ -22,7 +22,7 @@ namespace MegaDeskV3_GregMoody
             Rosewood //4
         }
 
-        //Default constructor
+        //Default constructor - no longer needed
         /*
         public Desk()
         {

@@ -135,7 +135,6 @@ namespace MegaDeskV3_GregMoody
 
         public void ReadRushOrderPrices()
         {
-
             //Read the quotes into a 1-dimentional array
             try
             {
@@ -152,7 +151,7 @@ namespace MegaDeskV3_GregMoody
                 //You don messed up
             }
 
-            //format dem quotes
+            //format dem quotes into a 3x3 array
             rushOrderOptions = new int[3,3];
             int quoteIndex = 0;
             for (int i = 0; i < 3; i++)
@@ -163,7 +162,6 @@ namespace MegaDeskV3_GregMoody
                     quoteIndex++;
                 }
             }
-
         }
     }
 }
