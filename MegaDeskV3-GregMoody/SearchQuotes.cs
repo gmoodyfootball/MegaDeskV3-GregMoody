@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace MegaDeskV3_GregMoody
 {
@@ -45,6 +46,44 @@ namespace MegaDeskV3_GregMoody
         private void searchButton_Click(object sender, EventArgs e)
         {
             searchQuotesDataGridView.Rows.Clear();
+
+            List<DeskQuote> listODesks = new List<DeskQuote>();
+
+            try
+            {
+                using (StreamReader sr = new StreamReader("quotes.json"))
+                {
+                    String jsonString = sr.ReadToEnd();
+                    listODesks = JsonConvert.DeserializeObject<List<DeskQuote>>(jsonString);
+                }
+            }
+            catch
+            {
+                //You don messed up
+                //This means there was no file to begin with
+            }
+
+
+            //Add each deskquote object into its own row
+            foreach (DeskQuote deskQuote in listODesks)
+            {
+                //Have to create a string to compare it with the "contains" object.
+                string surfaceMaterial = deskQuote.desk.SurfaceMaterial.ToString();
+                if (surfaceMaterial.Contains(surfaceMaterialComboBox.Text))
+                    {
+                        searchQuotesDataGridView.Rows.Add(
+                                         deskQuote.custName,
+                                         deskQuote.quoteDate,
+                                         deskQuote.desk.SurfaceMaterial,
+                                         deskQuote.desk.Width,
+                                         deskQuote.desk.Depth,
+                                         deskQuote.desk.NumDrawers,
+                                         deskQuote.rushDays,
+                                         deskQuote.totalCost
+                                         );
+                    }
+            }
+            /* Da old way
             try
             {
                 using (StreamReader sr = new StreamReader("quotes.txt"))
@@ -72,6 +111,7 @@ namespace MegaDeskV3_GregMoody
             {
                 //You don messed up
             }
+            */
         }
     }
 }
